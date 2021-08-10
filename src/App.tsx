@@ -6,9 +6,6 @@ import PrivateRoute from "./components/privateRoute/PrivateRoute";
 import Login from "./containers/login/Login";
 import Navbar from "./containers/navbar/Navbar";
 import PokemonList from "./containers/pokemon-list/PokemonList";
-import ProductCreate from "./containers/product-create/ProductCreate";
-import ProductDetail from "./containers/product-detail/ProductDetail";
-import ProductList from "./containers/product-list/ProductList";
 import UserDetail from "./containers/user-detail/UserDetail";
 import UserList from "./containers/user-list/UserList";
 import UserCreate from "./containers/users-create/UserCreate";
@@ -31,18 +28,8 @@ function App() {
         <Route path="/detail/:id">
           <UserDetail />
         </Route>
-        <Route path="/products" exact>
-          <ProductList />
-        </Route>
         <Route path="/pokemon" exact>
           <PokemonList />
-        </Route>
-        <PrivateRoute isLogin={isLogin} path="/products/create" component={ProductCreate}/>
-        {/* <Route path="/products/create">
-          <ProductCreate />
-        </Route> */}
-        <Route path="/products/detail/:id">
-          <ProductDetail />
         </Route>
       </Router>
     </div>

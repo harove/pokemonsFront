@@ -4,14 +4,16 @@ import {
   POKEMON_FETCH_SUCCEDED,
 } from "../constants";
 
-
 export const pokemonFetch = () => {
   return (dispatch: any) => {
     dispatch({
       type: POKEMON_FETCH_STARTED,
     });
     try {
-      fetch("https://pokeapi.co/api/v2/pokemon/ditto")
+      fetch("http://localhost:3005/pokemon/pokemons", {
+        method: "GET",
+        mode:'cors'
+      })
         .then((response) => {
           return response.json();
         })

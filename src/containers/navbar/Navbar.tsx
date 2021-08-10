@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { logoutAction } from "../../store/login/actions";
 import "./navbar.css";
 
@@ -41,29 +41,9 @@ const Menu = () => {
 			exact
 			activeClassName="selected"
 			className="nav-link"
-			to="/products"
-		  >
-			List
-		  </NavLink>
-		</li>
-		<li className="nav-item">
-		  <NavLink
-			exact
-			activeClassName="selected"
-			className="nav-link"
 			to="/pokemon"
 		  >
 			Pokemones
-		  </NavLink>
-		</li>
-		<li className="nav-item">
-		  <NavLink
-			exact
-			activeClassName="selected"
-			className="nav-link"
-			to="/products/create"
-		  >
-			Create
 		  </NavLink>
 		</li>
 		<li className="nav-item">
