@@ -1,0 +1,12 @@
+.poke-img-wrapper{
+    border: solid black 5px;
+    display: flex;
+}
+
+.poke-img-wrapper img{
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    background-color: rgba(255,255,255,0.6);
+    margin-top: 20px;
+}

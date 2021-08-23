@@ -1,8 +1,14 @@
-import { POKEMON_FETCH_STARTED, POKEMON_FETCH_SUCCEDED } from "../constants";
+import {
+  POKEMON_FETCH_STARTED,
+  POKEMON_FETCH_SUCCEDED,
+  POKEMON_DETAIL_FETCH_STARTED,
+  POKEMON_DETAIL_FETCH_SUCCEDED,
+} from "../constants";
 
 const initialState = {
-  data: {},
-  isLoading: false,
+  data: { results: [] },
+  details: [],
+  isLoading: 'iddle',
   fetchSuccessfull: false,
   fetchFailed: false,
 };
@@ -15,17 +21,29 @@ const pokemonReducer = (
     case POKEMON_FETCH_STARTED:
       return {
         ...prevState,
-        isLoading: true,
+        isLoading: 'loading',
       };
     case POKEMON_FETCH_SUCCEDED:
       return {
         ...prevState,
-        isLoading: false,
-        fetchSuccessfull:true,
-        fetchFailed:false,
-        data:action.payload
+        isLoading: 'succeeded',
+        fetchSuccessfull: true,
+        fetchFailed: false,
+        data: action.payload,
       };
-
+    case POKEMON_DETAIL_FETCH_STARTED:
+      return {
+        ...prevState,
+        isLoading: 'loading',
+      };
+    case POKEMON_DETAIL_FETCH_SUCCEDED:
+      return {
+        ...prevState,
+        isLoading: 'succeeded',
+        fetchSuccessfull: true,
+        fetchFailed: false,
+        details: action.payload,
+      };
     default:
       return prevState;
   }
